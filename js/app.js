@@ -39,10 +39,12 @@ function shuffle(array) {
 function addCardsToDeck() {
     var decker = document.getElementsByClassName("deck");
     shuffle(symbols);
-    symbols.forEach(function(symbol) {
+    symbols.forEach( function(symbol) {
         var cardElem = '<li class="card"><i class="' + symbol + '"></i></li>';
         //decker.append(cardElem);
-        decker.push(cardElem);
+        //decker.push(cardElem);
+        //$(".deck").append(cardElem);
+        decker =+ cardElem;
     })
 }
 
@@ -53,58 +55,57 @@ document.addEventListener("click", function () {
 })
 
 function displayCardOnDeck () {
-    symbols.forEach(function (e) {
-            function displayCard () {
-                var open = this.addClass("open show");//display card
-            }
+    document.getElementsByClassName("deck").forEach(function displayCardName (e) {
+        function displayCard () {
+            var open = this.addClass("open show");//display card
+        }
 
-            function OpenCards () {
-                var openList = [];
-                openList.push(open);//adding card to a list of open cards
-            }
+        function OpenCards () {
+            var openList = [];
+            openList.addClass(open);//adding card to a list of open cards
+        }
          
-            function lockCards () {
-                while (openList.length === 2) {
-                    if (openList[0] === openList[1]) { //checking if two cards match
-                      var lockCards = openList.addClass("match");//lock cards in open position
-                    }
-                }
+        function lockCards () {
+            while (openList.length === 2) {
+                if (openList [0] === openList[1]) {//checking if two cards match
+                    var lockCards = openList.addClass("match");//lock cards in open position
+                }        
             }
+        }
+             
+        function removeCard () {
+            if (!(openList[0] === openList[1])) {
+                var removeList = openList.removeChild(open); //remove card from list of open cards if they do not match
+                    removeList.hide();
+            }
+        }
 
-            function removeCard () {
-                if (!(openList[0] === openList[1])) {
-                    var removeList = openList.removeChild(open); //remove card from list of open cards if they do not match
-                      removeList.hide();
-                }
+        function moveCounter () {
+            var counter = document.getElementsByClassName('move');
+            //counter.addEventListener("click", function moveOn () {
+                for (var i = 0; i <= 36; i++) {
+                    counter = 0;
+                    counter =+ 1;
+            }    
+        }
+
+        function allCardsMatch () {
+            while (lockCards = true) {
+                console.log("You Won!!!!!!!!");
             }
+        }
 
         //displayCard();
         //OpenCards();
         //lockCards();
         //removeCard();
-        })
+        //moveCounter();
+        //allCardsMatch();
+    })
 }   
 
-//function moveCounter () {
-    //var counter = document.getElementsByClassName('move');
-    //counter.addEventListener("click", function moveOn () {
-       // for (var i = 0; i <= 18; i++) {
-        //    count = 0;
-      //      count =+ 1;
-    //    }
-  //  })
-//}
-
-//moveCounter();
 
 
-
-
-
-
-
-           //increment move counter
-           //display message if all cards match
 
 
 /*
