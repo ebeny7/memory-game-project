@@ -37,7 +37,7 @@ function shuffle(array) {
 }
 
 function addCardsToDeck() {
-    var decker = document.getElementsByClassName("deck");
+    var decker = $(".deck");
     shuffle(symbols);
     symbols.forEach( function(symbol) {
         var cardElem = '<li class="card"><i class="' + symbol + '"></i></li>';
@@ -45,69 +45,84 @@ function addCardsToDeck() {
         //decker.push(cardElem);
         //$(".deck").append(cardElem);
         decker =+ cardElem;
+        console.log(decker);
     })
 }
 
 addCardsToDeck();
 
-document.addEventListener("click", function () {
-    displayCardOnDeck();
-})
+//document.addEventListener("click", function () {
+    //displayCardOnDeck();
+//})
 
-function displayCardOnDeck () {
-    document.getElementsByClassName("deck").forEach(function displayCardName (e) {
-        function displayCard () {
-            var open = this.addClass("open show");//display card
-        }
+//function displayCardOnDeck () {
+    //r(".card").click(function () {
+        //for (var i = 0; i < r(".card").length; i++) {
+            //function displayCard () {
+                //var open = $(".card")[0];
+              //  var openDeck = this.addClass("open show");//display card
+                //console.log(openDeck);
+            //}
+            //displayCard();
 
-        function OpenCards () {
-            var openList = [];
-            openList.addClass(open);//adding card to a list of open cards
-        }
-         
-        function lockCards () {
-            while (openList.length === 2) {
-                if (openList [0] === openList[1]) {//checking if two cards match
-                    var lockCards = openList.addClass("match");//lock cards in open position
-                }        
+            $(".card").forEach( function (e) {
+                function displayCard() {
+                    var open = this.addClass('open show');
+                }
+            })
+            displayCard();
+
+            function openCards () {
+                var openList = [];
+                var openedCards = openList.push(openDeck);//adding card to a list of open cards
+                console.log(openedCards);
             }
-        }
-             
-        function removeCard () {
-            if (!(openList[0] === openList[1])) {
-                var removeList = openList.removeChild(open); //remove card from list of open cards if they do not match
-                    removeList.hide();
+            openedCards();
+
+
+            function lockCards () {
+                while (openedCards.length === 2) {
+                    if (openedCards[0] === OpenedCards[1]) {//checking if two cards match
+                        var lockCard = openedCards.addClass("match");//lock cards in open position
+                console.log(lockCard);
+                    }        
+                }
             }
-        }
+            lockCards();
 
-        function moveCounter () {
-            var counter = document.getElementsByClassName('move');
-            //counter.addEventListener("click", function moveOn () {
-                for (var i = 0; i <= 36; i++) {
-                    counter = 0;
-                    counter =+ 1;
-            }    
-        }
-
-        function allCardsMatch () {
-            while (lockCards = true) {
-                console.log("You Won!!!!!!!!");
+            function removeCard () {
+                if (!(openedCards[0] === openedCards[1])) {
+                    var removeList = openedCards.remove(openDeck); //remove card from list of open cards if they do not match
+                        var removeListCards = removeList.hide();
+                    console.log(removeListCards);
+                }
             }
-        }
+            removeCard();
 
-        //displayCard();
-        //OpenCards();
-        //lockCards();
-        //removeCard();
-        //moveCounter();
-        //allCardsMatch();
-    })
-}   
+            function moveCounter () {
+                var counter = document.getElementsByClassName('move');
+                //counter.addEventListener("click", function moveOn () {
+                    for (var i = 0; i <= $(".card").length; i++) {
+                        counter = 0;
+                        counter =+ 1;
+                    console.log(counter);
+                    }    
+            }
+            moveCounter();
 
 
+            function allCardsMatch () {
+                while (lockCards = true) {
+                    console.log("You Won!!!!!!!!");
+                }
+            }
+            allCardsMatch();
 
+        //}
+    //})        
+//}
 
-
+//displayCardOnDeck();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
