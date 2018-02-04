@@ -36,7 +36,7 @@ function shuffle(array) {
     return array;
 }
 
-function addCardsToDeck() {
+function addCardsToDeck () {
     var decker = $(".deck");
     shuffle(symbols);
     symbols.forEach( function(symbol) {
@@ -45,84 +45,63 @@ function addCardsToDeck() {
         //decker.push(cardElem);
         //$(".deck").append(cardElem);
         decker =+ cardElem;
-        console.log(decker);
     })
 }
 
 addCardsToDeck();
 
-//document.addEventListener("click", function () {
-    //displayCardOnDeck();
-//})
-
-//function displayCardOnDeck () {
-    //r(".card").click(function () {
-        //for (var i = 0; i < r(".card").length; i++) {
-            //function displayCard () {
-                //var open = $(".card")[0];
-              //  var openDeck = this.addClass("open show");//display card
-                //console.log(openDeck);
-            //}
-            //displayCard();
-
-            $(".card").forEach( function (e) {
-                function displayCard() {
-                    var open = this.addClass('open show');
-                }
-            })
-            displayCard();
-
-            function openCards () {
-                var openList = [];
-                var openedCards = openList.push(openDeck);//adding card to a list of open cards
-                console.log(openedCards);
-            }
-            openedCards();
-
-
-            function lockCards () {
-                while (openedCards.length === 2) {
-                    if (openedCards[0] === OpenedCards[1]) {//checking if two cards match
-                        var lockCard = openedCards.addClass("match");//lock cards in open position
-                console.log(lockCard);
-                    }        
-                }
-            }
-            lockCards();
-
-            function removeCard () {
-                if (!(openedCards[0] === openedCards[1])) {
-                    var removeList = openedCards.remove(openDeck); //remove card from list of open cards if they do not match
-                        var removeListCards = removeList.hide();
-                    console.log(removeListCards);
-                }
-            }
-            removeCard();
-
-            function moveCounter () {
-                var counter = document.getElementsByClassName('move');
-                //counter.addEventListener("click", function moveOn () {
-                    for (var i = 0; i <= $(".card").length; i++) {
-                        counter = 0;
-                        counter =+ 1;
-                    console.log(counter);
-                    }    
-            }
-            moveCounter();
-
-
-            function allCardsMatch () {
-                while (lockCards = true) {
-                    console.log("You Won!!!!!!!!");
-                }
-            }
-            allCardsMatch();
-
-        //}
-    //})        
+//function displayCard () {
+    //for (var i = 1; i <= $(".card").length; i++) {
+        //$(".card").click( function (card) {
+        //  var open = $(".card:nth-child(i)").addClass("open show");
+        //  console.log(open);
+        //})
+    //}
 //}
 
-//displayCardOnDeck();
+ function displayCard () {
+    $(".card").click(function (card) {
+        card.preventDefault();
+        open = $(this).addClass("open show");
+        console.log(open);
+        openCards();
+        //lockCards();
+    })
+}
+
+    function openCards () {
+        openDeck = [];
+        openDeck =+ open;
+        console.log(openDeck);
+        //if (open.length = 2 && open[0] === open[1]) { 
+          //  openMatch = open.addClass("match");
+        //console.log(openMatch);
+        //}
+    }
+    
+    function lockCards () {
+       
+    }
+                    //function moveCounter () {
+                      //  var counter = $(".move");
+                        //while (displayCard = true) {
+                          //  counter = 0;
+                            //counter =+ 1;
+                        //console.log(counter);
+                        //}    
+                    //}
+
+                
+
+
+    //function allCardsMatch () {
+       // if (displayCard.length = $("card").length) {
+        //    console.log("You Won!!!!!!!!");
+        //}
+    //}
+
+
+displayCard();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
