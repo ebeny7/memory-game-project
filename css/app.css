@@ -107,3 +107,9 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.score-panel .move {
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: italic;
+}

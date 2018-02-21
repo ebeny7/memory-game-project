@@ -59,49 +59,45 @@ addCardsToDeck();
     //}
 //}
 
- function displayCard () {
+function displayCard () {
     $(".card").click(function (card) {
-        card.preventDefault();
         open = $(this).addClass("open show");
-        console.log(open);
-        openCards();
-        //lockCards();
+    //openCards();
     })
 }
 
     function openCards () {
-        openDeck = [];
-        openDeck =+ open;
-        console.log(openDeck);
-        //if (open.length = 2 && open[0] === open[1]) { 
-          //  openMatch = open.addClass("match");
-        //console.log(openMatch);
-        //}
+        if ($(".card.open.show").length = 2) {
+            if ($(".card.open.show")[0] = $(".card.open.show")[1]) { 
+                openMatch = $(".card.open.show").addClass("match");
+            } else if (!($(".card.open.show")[0] = $(".card.open.show")[1])) {
+                removeCard =  $(".card.open.show");  
+            } 
+        }   
     }
     
     function lockCards () {
        
     }
-                    //function moveCounter () {
-                      //  var counter = $(".move");
-                        //while (displayCard = true) {
-                          //  counter = 0;
-                            //counter =+ 1;
-                        //console.log(counter);
-                        //}    
-                    //}
-
+                    
+    function moveCounter () {
+        $(".card").click(function (card) {
+      //      <= $(".card.open.show").length 
+        //        $(".moves").html() =+ 1;
+          //  }
+        })   
+    }
                 
 
 
-    //function allCardsMatch () {
-       // if (displayCard.length = $("card").length) {
-        //    console.log("You Won!!!!!!!!");
-        //}
-    //}
+    function allCardsMatch () {
+        if ($(".card.open.match").length = $(".card").length) {
+            console.log("You Won!!!!!!!!");
+        }
+    }
 
 
-displayCard();
+//displayCard();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
