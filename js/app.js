@@ -70,21 +70,24 @@ function displayCard () {
         if ($(".card.open.show").length = 2) {
             if ($(".card.open.show")[0] = $(".card.open.show")[1]) { 
                 openMatch = $(".card.open.show").addClass("match");
-            } else if (!($(".card.open.show")[0] = $(".card.open.show")[1])) {
-                removeCard =  $(".card.open.show");  
-            } 
-        }   
+            }
+        }else if (!($(".card.open.show")[0] = $(".card.open.show")[1])) {
+                removeCard =  $(".card.open.show").remove();
+                    removeCard.hide();  
+        }    
     }
     
     function lockCards () {
        
     }
                     
+                    
     function moveCounter () {
+        var mCount = $(".moves");
+        var addCount = "<span class="moves" value>1</span>";
+        mCount =+ addCount;
         $(".card").click(function (card) {
-      //      <= $(".card.open.show").length 
-        //        $(".moves").html() =+ 1;
-          //  }
+            mCount =+ 1; //check for authenticity
         })   
     }
                 
@@ -92,7 +95,7 @@ function displayCard () {
 
     function allCardsMatch () {
         if ($(".card.open.match").length = $(".card").length) {
-            console.log("You Won!!!!!!!!");
+            console.log("I came out reCoverEd!!!!!!!!!!!!!!!");
         }
     }
 
