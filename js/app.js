@@ -62,19 +62,19 @@ addCardsToDeck();
 function displayCard () {
     $(".card").click(function (card) {
         open = $(this).addClass("open show");
-    //openCards();
+        lockCards();
     })
 }
 
-    function openCards () {
+    function lockCards () {
         if ($(".card.open.show").length = 2) {
             if ($(".card.open.show")[0] = $(".card.open.show")[1]) { 
                 openMatch = $(".card.open.show").addClass("match");
             }
-        }else if (!($(".card.open.show")[0] = $(".card.open.show")[1])) {
-                removeCard =  $(".card.open.show").remove();
-                    removeCard.hide();  
-        }    
+        } //else if (!($(".card.open.show")[0] = $(".card.open.show")[1])) {
+                //removeCard =  $(".card.open.show").remove();
+                   // removeCard.hide();  
+        //}    
     }
     
     function lockCards () {
@@ -84,7 +84,7 @@ function displayCard () {
                     
     function moveCounter () {
         var mCount = $(".moves");
-        var addCount = "<span class="moves" value>1</span>";
+        var addCount = '<span class="moves" value>1</span>';
         mCount =+ addCount;
         $(".card").click(function (card) {
             mCount =+ 1; //check for authenticity
